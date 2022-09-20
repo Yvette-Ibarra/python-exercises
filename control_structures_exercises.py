@@ -186,6 +186,26 @@ while True:
                     continue
                 print(f'Here is an odd number: {i}') 
 
+#alternative code
+
+while True:
+    user_num = input('Enter an odd number between 1 and 50: ')
+    
+    if user_num.isdigit():                   # nested if statements checks each of the statements below
+        print ("This is a digit")
+        if int(user_num)% 2 != 0:
+            print('This is an odd number')
+            if (int(user_num) >1) and (int(user_num) < 50):
+                print('This number is between 1 and 50')
+                break                       # break is to break a loop
+
+user_num = int(user_num)
+for i in range(1,50):
+    if i == user_num:
+        print(" skipped this!")
+        continue                            # continue is to skip an iteration of the loop
+    if i % 2 == 1:
+        print(i)
 
 # 3 Fizzbuzz
     '''One of the most common interview questions for entry-level programmers is the FizzBuzz test. Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
@@ -209,6 +229,18 @@ while i <= 100:
         print('Buzz')
         i +=1
     
+# alternative code
+for i in range(1,101):
+    if i % 15 == 0:
+        print('FizzBuzz')
+        continue
+    if i % 3 == 0:
+        print('Fizz')
+        continue
+    if i % 5 == 0:
+        print('Buzz')
+        continue
+    print(i)
 
 ''' 4 Display a table of powers.
         Prompt the user to enter an integer.
@@ -232,6 +264,17 @@ while ask == 'yes':
         number = int(input("What number would you like to go up to?  "))
 
 Bonus: Research python's format string specifiers to align the table
+# Alternative Code
+while True:
+    user_num = int(input('Enter an integer: '))
+
+    for i in range(1, user_num + 1):
+        print(f'{i}  |{i**2}  |{i**3}')
+    
+    user_yn = input ('Would you like to continue? (y/n): ')
+    if user_yn.lower() != 'y':
+        break
+
 5. Convert given number grades into letter grades.
         Prompt the user for a numerical grade from 0 to 100.
         Display the corresponding letter grade.
@@ -245,7 +288,22 @@ C : 79 - 67
 D : 66 - 60
 F : 59 - 0
 
-'''
+
+while True:    
+    user_grade = int(input('Enter a numerical grade from 0-100: '))
+
+    if user_grade >= 88:
+        print('A')
+    elif user_grade >= 80:
+        print('B')
+    elif user_grade >= 67:
+        print('C')
+    else:
+        print('F')
+        
+    user_yn = input('Would you like to continue? (y/n):  ')
+    if user_yn.lower() != 'y':
+        break
 
 '''
 Bonus
