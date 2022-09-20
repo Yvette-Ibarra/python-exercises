@@ -134,15 +134,16 @@ if number > 0:
 
 # Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input. (Hint: use the isdigit method on strings to determine this). Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
 
-num = int(input('Enter an odd number between 1 and 50: '))
-odd_numbers = [n for n in list(range(0,50)) if n%2 != 0]
-while num%2 == 0:
-    num = int(input('Your entry is invalid. Please enter an odd number between 1 and 50: '))
-    continue
-    
-    while num != 0:   
-        print (f'Here is an odd number {num}')
-        num = num - 2
+while True:
+    num = input('Enter an odd number between 1 and 50: ' )
+    if num.isdigit() == True:
+        num = int(num)
+        if num%2 == 1 and num > 0 and num < 51:
+            for i in range(1, 50, 2):
+                if i == num:
+                    print(f'Yikes! Skipping number: {i}')
+                    continue
+                print(f'Here is an odd number: {i}') 
 
 
 # 3 Fizzbuzz
@@ -174,7 +175,7 @@ while i <= 100:
         Ask if the user wants to continue.
         Assume that the user will enter valid data.
     Only continue if the user agrees to. '''
-    
+
 number = int(input("Enter an integer... "))
 ask = 'yes'
 while ask == 'yes':
