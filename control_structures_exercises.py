@@ -16,7 +16,7 @@ else:
 # B prompt the user for a day of the week, print out whether the day is a weekday or a weekend  '''
 
 day = input('Type in a day of the week? ')
-weekend = ['friday','saturday','sunday']
+weekend = ['saturday','sunday']
 day= day.lower
 if day in weekend:
     print ('This day falls on the weekend!')
@@ -94,7 +94,12 @@ while i >= 5:
 
 # b For Loops
 # Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
- 
+
+for x in range(1,11):
+    print(f'{user_num} X {x} = {int(user_num) * x }') 
+
+
+    # Using While Loop
  number =  int(input('Enter a positive number that is 10 or less '))
 i = 0
 if number <= 10:
@@ -105,6 +110,11 @@ if number <= 10:
 
 #  Create a for loop that uses print to create the output shown below.
 
+for i in range(1, 10):
+    print(i * str(i))
+
+
+# Using While Loop
 i = 1
 while i <=9:
     x=str(i)
@@ -122,7 +132,7 @@ while True:
         break
 
 # The input function can be used to prompt for input and use that input in your python code. Prompt the user to enter a positive number and write a loop that counts from 0 to that number. (Hints: first make sure that the value the user entered is a valid number, also note that the input function returns a string, so you'll need to convert this to a numeric type.)
-
+'''
 number =int(input("Enter a positive number "))
 i = 0
 if number > 0:
@@ -131,6 +141,22 @@ if number > 0:
         i += 1
         if i > number:
             break
+'''
+# Update to check for digits in user input
+
+while True:
+    user_num = input( 'Please enter a positive number: ')
+                                                # could have used     if user_num.isdigit():
+    if user_num.isdigit() == True:              # check digit first because if we run int(user_num) on a non digit error will occur
+        print('This is a digit')                #print to check what part of loop is actually working
+        if int(user_num) > 0:
+            print("This number is positve!")
+            break
+
+user_num = int(user_num)
+for i in range(user_num, 0, -1):
+    print(i)
+
 
 # Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input. (Hint: use the isdigit method on strings to determine this). Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
 
