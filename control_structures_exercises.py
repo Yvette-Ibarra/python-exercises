@@ -176,19 +176,19 @@ while i <= 100:
         Assume that the user will enter valid data.
     Only continue if the user agrees to. '''
 
-number = int(input("Enter an integer... "))
+number = int(input("What number would you like to go up to?  "))
 ask = 'yes'
 while ask == 'yes':
+    print ("{:<8}| {:<10}| {:<10}".format('number','squared','cubed'))
     i = 1
     while i <= number:
-        print(i, i**2, i**3)
+        print ("{:<8}| {:<10}| {:<10}".format(i, i**2, i**3))
         i +=1
         continue
     ask = input ('Do you want to continue? ')
-    ask.lower()
+    ask = ask.lower()
     if ask == 'yes':
-        number = int(input("Enter an integer... "))
-        continue
+        number = int(input("What number would you like to go up to?  "))
 
 Bonus: Research python's format string specifiers to align the table
 5. Convert given number grades into letter grades.
