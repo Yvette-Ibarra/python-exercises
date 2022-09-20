@@ -124,26 +124,15 @@ while i <=9:
 # c break and continue
 # Write a program that prompts the user for a positive integer. Next write a loop that prints out the numbers from the number the user entered down to 1.
 positive_integer = int(input("Enter a positive integer "))
-                       
+'''''                     
 while True:
     print(positive_integer)
     positive_integer -= 1
     if positive_integer < 1:
         break
-
-# The input function can be used to prompt for input and use that input in your python code. Prompt the user to enter a positive number and write a loop that counts from 0 to that number. (Hints: first make sure that the value the user entered is a valid number, also note that the input function returns a string, so you'll need to convert this to a numeric type.)
 '''
-number =int(input("Enter a positive number "))
-i = 0
-if number > 0:
-    while i <= number:
-        print (i)
-        i += 1
-        if i > number:
-            break
-'''
-# Update to check for digits in user input
 
+# update to include user input check for digit    
 while True:
     user_num = input( 'Please enter a positive number: ')
                                                 # could have used     if user_num.isdigit():
@@ -156,6 +145,32 @@ while True:
 user_num = int(user_num)
 for i in range(user_num, 0, -1):
     print(i)
+# The input function can be used to prompt for input and use that input in your python code. Prompt the user to enter a positive number and write a loop that counts from 0 to that number. (Hints: first make sure that the value the user entered is a valid number, also note that the input function returns a string, so you'll need to convert this to a numeric type.)
+
+number =int(input("Enter a positive number "))
+i = 0
+if number > 0:
+    while i <= number:
+        print (i)
+        i += 1
+        if i > number:
+            break
+
+# alternative code checks for positive digit
+while True:
+    user_num = input( 'Please enter a positive number: ')
+                                               
+       
+    if user_num.isdigit() == True:              
+        print('This is a digit')                 
+        if int(user_num) > 0:
+            print("This number is positve!")
+            break
+
+for i in range(int(user_num)+ 1,):
+    print(i)
+
+
 
 
 # Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input. (Hint: use the isdigit method on strings to determine this). Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
