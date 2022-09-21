@@ -59,13 +59,33 @@ def get_letter_grade (number):
 # 9 Function accepts a string and returns string with vowels removed
 def remove_vowels (entry):
     vowels = ('a','e','i','o','u','A','E','I', 'O', 'U')
-    for i in vowels:
-        new_entry = entry.replace(i,"")
-        return(new_entry)
+    for i in entry:
+        if i in vowels:
+            entry = entry.replace(i,"")
+    return entry
 
 # 10 normalize the name of python take in string and removes capital letter, replaces spaces between words with underscore
 def normalize_name(entry):
-    new_entry = entry.lower()
-    new_entry.replace('' '','_')
-    new_entry.replace(''%'','')
-    return new_entry
+  
+    entry = entry.lower()
+    entry = entry.strip()
+    
+    for letter in entry:
+        if letter == ' ':
+            entry = entry.replace(letter, '_')
+        elif not letter.isalpha() and not letter.isdigit():
+            entry = entry.replace(letter, '')
+    return entry
+
+# 11 function arguments is a list and returns the cumative sum the number in the list
+def cumulative_sum (list_of_numbers = []):
+    new_list = []
+    y= list_of_numbers[0]
+    i=0
+    
+    while i < len(list_of_numbers)-1:
+        new_list.append(y)
+        y=list_of_numbers[i+1]+y
+        i +=1
+    new_list.append(y)
+    print (new_list)
