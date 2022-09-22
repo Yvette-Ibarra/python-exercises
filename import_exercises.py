@@ -92,3 +92,27 @@ for file in profiles:
         highest_balance = file['balance']
 
 print(highest_balance)
+
+# Most common favorite fruit
+    #strawberry
+list_of_fruit = []
+for i in profiles:
+    list_of_fruit.append(i['favoriteFruit'])  
+print(max(set(list_of_fruit), key = list_of_fruit.count))
+
+# Least most common favorite fruit
+    #apple
+list_of_fruit = []
+for i in profiles:
+    list_of_fruit.append(i['favoriteFruit'])  
+print(min(set(list_of_fruit), key = list_of_fruit.count))
+
+# Total number of unread messages for all users
+    # total unread messages is 210
+import re
+list_of_greetings= []
+for i in profiles:
+    list_of_greetings.append(i['greeting'])
+numbers_list = [int(i) for i in str(list_of_greetings).split() if i.isdigit()]
+print (sum(numbers_list))
+
