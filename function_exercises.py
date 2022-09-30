@@ -151,9 +151,16 @@ def normalize_name(entry):
 # Alternative code using .isidentifier method
 def normalize_name(somestring):
     newstring = ''
+    # for loop to grap all letter, numbers, and spaces.
     for letter in somestring:
-        if letter.isidentifier() or letter == ' ':
+        if letter.isalnum() or letter == ' ':
+    # for loops to check if leading character is a letter    
             newstring += letter
+    for letter in newstring:   
+        if letter.isalpha():
+            break
+        else:
+            newstring = newstring[1: ]
     return newstring.strip().lower().replace(' ', '_') 
 
 # 11 function arguments is a list and returns the cumative sum the number in the list

@@ -48,13 +48,22 @@ print(counter)
 
 # Grand total of balances for all users
     #grand_total is 52667.02
-
+'''
 grand_total = 0
 for item in profiles:
     number = item['balance']
     number = number.replace(',','').replace('$','')
     
     grand_total +=float(number)
+print(grand_total)
+'''
+# Alternative Code with less lines
+grand_total = 0
+
+for p in profiles:
+    user_balance = float(p['balance'].strip('$').replace(',', ''))
+    grand_total = grand_total + user_balance
+
 print(grand_total)
 
 #Average balance per user
